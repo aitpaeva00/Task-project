@@ -7,7 +7,6 @@ function App() {
         <TaskProvider>
             <div>
                 <h1>Task Manager</h1>
-                <AddTask />
                 <TaskList />
             </div>
         </TaskProvider>
