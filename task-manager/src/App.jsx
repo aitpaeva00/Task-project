@@ -1,4 +1,6 @@
 import { useState } from "react";
+import TaskList from "./TaskList";
+import AddTask from "./AddTask";
 
 function App() {
     const [tasks, setTasks] = useState([]);
@@ -14,17 +16,8 @@ function App() {
     return (
         <div>
             <h1>Task Manager</h1>
-            <input
-                type="text"
-                value={task}
-                onChange={(e) => setTask(e.target.value)}
-            />
-            <button onClick={addTask}>Add Task</button>
-            <ul>
-                {tasks.map((t, index) => (
-                    <li key={index}>{t}</li>
-                ))}
-            </ul>
+            <AddTask task={task} setTask={setTask} addTask={addTask} />
+            <TaskList tasks={tasks} />
         </div>
     );
 }
